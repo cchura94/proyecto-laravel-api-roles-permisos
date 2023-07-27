@@ -1,0 +1,32 @@
+GET http://127.0.0.1:8000/api/users?limit=10&page=1&q=
+Accept: application/json
+Authorization: Bearer 5|JogcEU3ZljJ9MFyYQhMqAsdnA2IlCjjdrsa2FDGg
+
+### Guardar usuario
+POST http://127.0.0.1:8000/api/users
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Juan",
+    "email": "juan@mail.com",
+    "password": "juan54321"
+}
+
+### mostrar
+GET http://127.0.0.1:8000/api/users/4
+Accept: application/json
+
+### Modificar usuario
+PUT http://127.0.0.1:8000/api/users/3
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Juan Modificado",
+    "email": "juan@mail2.com"
+}
+
+### eliminar
+DELETE http://127.0.0.1:8000/api/users/3
+Accept: application/json
