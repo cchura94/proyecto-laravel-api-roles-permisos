@@ -8,7 +8,7 @@ Content-Type: application/json
     "password": "admin54321"
 }
 
-### Login
+### Login con Sanctum
 POST http://127.0.0.1:8000/api/v1/auth/login
 Accept: application/json
 Content-Type: application/json
@@ -18,10 +18,26 @@ Content-Type: application/json
     "password": "admin54321"
 }
 
+### Login con Passport
+POST http://127.0.0.1:8000/api/passport/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "cristian@mail.com",
+    "password": "cristian54321"
+}
+
 ### perfil
 GET http://127.0.0.1:8000/api/v1/auth/profile
 Accept: application/json
-Authorization: Bearer 4|SDBKBfh9yuKr2GTSgZctUXiG2TUHZB5VgfrSEpOM
+Authorization: Bearer 7|LsywLWprWErqgQ6XGJfXX109W9uskfclQHeaQSho
+
+### perfil con passport
+GET http://127.0.0.1:8000/api/passport/profile
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmRjZGY5NTJiMGU3ZmJiYjJkNTUwMTcyNzZmYTE4ZjkwYTFjMTJiNDI3ZTgyNzg5MmZlODgyYmRiZmI5OWIxMmM3YTUwZDdhOTNhOTE4OTAiLCJpYXQiOjE2OTEwMTkzMzcuNzcxMzkzLCJuYmYiOjE2OTEwMTkzMzcuNzcxMzk1LCJleHAiOjE3MjI2NDE3MzcuNzYzNjE1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.SbtatSnqj-lp3Ustn3ivf_hMLaTTW6FRVfRQTYTYgwuigAuhW8DtvVarF10x0r-lfhn2MvDKL3ome5J_aofSXeGFQDQHGNFjVhlWUbXeUelTTss1QwOUYmAo8S1gAsp8dYB8_r0MrAsfVo6njuFLtMqS1t8J7Qus6zMbzihflKeLGDYs10dGMcbYRbPWPz7WB9kUv59j5jLcZ9KA2kOvQaIEOF1lOxZlx8hwTlicgDiY7tMhqwM_8Vhj28CNnnN54RzUCiHDh_OmWSbLFkCw8uUgdw0DAQI-jbRtTeG5azPqTE9O4Nl2HJm9fXQGYkP1xD3Uj6f0ATvEP28hsaAGprSrsIX16Grcp4Qje3woEmIvVNmE01UL1Y568dU4PgfiZ4k6WasYY3Onu5xQWZcosj8sEBIP8yOII9vZ5uR_9KtEsdWECrzf5YD6QDByf_ej6IyDXokXvKC5Sj7hMcNW8iAwxxHQhA9sY2wgXd-BypGnUCcHrVJBf5f-pXSt_gmJHmdAiaXVUshCZygiBpK7DF-BYJRiQlEssNqq22USIKszV8Za0Gl97fUSCHJyUmg5MfGkXzLFCNCg7dghRtTebp93XbPDXqSMtHPbo8PuKe1UxH8F51iPhPjsX_yeamHJ8cw5KfGPNXpJDkfrJeKndex5kZ1LF-AVS4L-sn4D7gA
+
 
 ### salir
 POST http://127.0.0.1:8000/api/v1/auth/logout
