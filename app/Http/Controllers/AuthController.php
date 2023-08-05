@@ -15,7 +15,7 @@ class AuthController extends Controller
         ]);
 
         if(!Auth::attempt($credenciales)){
-            return response()->json(["message" => "No Autenticado"]);
+            return response()->json(["message" => "Credenciales Incorrectas"], 401);
         }
         
         $usuario = Auth::user();
