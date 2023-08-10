@@ -3,9 +3,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "name": "admin",
-    "email": "admin@mail.com",
-    "password": "admin54321"
+    "name": "maria",
+    "email": "maria@mail.com",
+    "password": "maria54321"
 }
 
 ### Login con Sanctum
@@ -14,8 +14,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "email": "admin@mail.com",
-    "password": "admin54321"
+    "email": "maria@mail.com",
+    "password": "maria54321"
 }
 
 ### Login con Passport
@@ -31,7 +31,7 @@ Content-Type: application/json
 ### perfil
 GET http://127.0.0.1:8000/api/v1/auth/profile
 Accept: application/json
-Authorization: Bearer 7|LsywLWprWErqgQ6XGJfXX109W9uskfclQHeaQSho
+Authorization: Bearer 1|bbf9LFyy5KdAyglWmi8yNIjMBLa4oA64XqxtlDMp
 
 ### perfil con passport
 GET http://127.0.0.1:8000/api/passport/profile

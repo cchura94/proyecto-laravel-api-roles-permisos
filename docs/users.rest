@@ -1,16 +1,16 @@
 GET http://127.0.0.1:8000/api/users?limit=10&page=1&q=
 Accept: application/json
-Authorization: Bearer 6|bHnc5PSxUE8XqfQa4m79rHg3zBFDCWM8XWKcn7Xh
+Authorization: Bearer 3|pkFSvU2VuP5Z0Kpl0KbPZODsbFYWrE1jZ6AiEy2Y
 
 ### Guardar usuario
 POST http://127.0.0.1:8000/api/users
 Accept: application/json
-Content-Type: application/json
-Authorization: Bearer 6|bHnc5PSxUE8XqfQa4m79rHg3zBFDCWM8XWKcn7Xh
+Content-Type: application/json 
+Authorization: Bearer 2|9QwDfVk6c4TPLDcL6dq4VoR8YjqbX2Izm3nf1yVp
 
 {
     "name": "Juan",
-    "email": "juan2@mail.com",
+    "email": "juan@mail.com",
     "password": "juan54321"
 }
 

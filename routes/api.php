@@ -37,5 +37,8 @@ Route::get("/passport/profile", [AuthController::class, "funPerfil"])->middlewar
     Route::apiResource("users", UserController::class);
     Route::apiResource("permiso", PermisoController::class);
     Route::apiResource("role", RoleController::class);
-
  });
+
+ Route::get("/no-autorizado", function(){
+    return response()->json(["message" => "Accion No autorizado"]);
+ })->name("login");
