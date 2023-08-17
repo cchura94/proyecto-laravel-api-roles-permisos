@@ -14,8 +14,8 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "email": "maria@mail.com",
-    "password": "maria54321"
+    "email": "admin@mail.com",
+    "password": "admin54321"
 }
 
 ### Login con Passport
@@ -31,7 +31,7 @@ Content-Type: application/json
 ### perfil
 GET http://127.0.0.1:8000/api/v1/auth/profile
 Accept: application/json
-Authorization: Bearer 1|bbf9LFyy5KdAyglWmi8yNIjMBLa4oA64XqxtlDMp
+Authorization: Bearer 4|r6Xf8L5j1WFNrzm6ESK82Mns733N8TFk9IvQFldO
 
 ### perfil con passport
 GET http://127.0.0.1:8000/api/passport/profile
