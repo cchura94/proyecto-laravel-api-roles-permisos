@@ -24,9 +24,10 @@ class UserController extends Controller
         if($buscar){
             $usuarios = User::orderBy("id", "desc")
                                 ->where("email", "like", "%$buscar%")
+                                ->with('roles')
                                 ->paginate($limit);
         }else{
-            $usuarios = User::orderBy("id", "desc")->paginate($limit);
+            $usuarios = User::orderBy("id", "desc")->with('roles')->paginate($limit);
 
         }
 
