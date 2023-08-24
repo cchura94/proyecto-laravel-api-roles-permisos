@@ -25,7 +25,7 @@ Content-Type: application/json
 
 {
     "email": "cristian@mail.com",
-    "password": "cristian54321"
+    "password": "cristian321"
 }
 
 ### Login con Passport
@@ -53,3 +53,25 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpI
 POST http://127.0.0.1:8000/api/v1/auth/logout
 Accept: application/json
 Authorization: Bearer 3|mwtZglo8Y7AbXhSCIX7NOmVbY54HPsGc54JjmrtE
+
+### reset password
+POST http://127.0.0.1:8000/api/reset-password
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "admin@mail.com"
+}
+
+### reset password cambio (7050816e1a356cc1ed9dc12b66712387d1d0840ffb8121e0be660ab39448a5c3)
+POST http://127.0.0.1:8000/api/cambio-password
+Accept: application/json
+Content-Type: application/json
+
+{
+    "token": "fca9e0b6ae0b7bc265aa33647faaf5ac8a96b8561cdd89e631b65a4dba6e9d94",
+    "email": "cristian@mail.com",
+    "password": "cristian321",
+    "password_confirmation": "cristian321"
+}
+
