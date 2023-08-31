@@ -86,8 +86,19 @@ class UserController extends Controller
         if(isset($request->password)){
             $usuario->password = bcrypt($request->password);
         }
+        
         $usuario->update();
 
+
+        // $usuario->assignRole($rol);
+        $array_roles = [];
+        foreach ($request->roles as $rol) {
+            // return $rol["id"];
+            array_push($array_roles, $rol["id"]);
+
+        }
+        $usuario->roles()->sync($array_roles);
+        
         return response()->json(["message" => "Usuario Actualizado"], 200);
     }
 
