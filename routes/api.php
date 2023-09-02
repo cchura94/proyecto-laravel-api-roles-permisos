@@ -33,7 +33,9 @@ Route::post("/passport/login", [AuthPassportController::class, "funIngresar"]);
 Route::post("/passport/register", [AuthPassportController::class, "funRegistro"]);
 Route::get("/passport/profile", [AuthController::class, "funPerfil"])->middleware('auth:api');
 
- Route::middleware('auth:sanctum')->group(function(){
+Route::middleware('auth:sanctum')->group(function(){
+     // permiso
+     Route::get("permiso/paginacion", [PermisoController::class, "indexPaginacion"]);
     // users
     Route::apiResource("users", UserController::class);
     Route::apiResource("permiso", PermisoController::class);

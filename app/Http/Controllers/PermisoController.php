@@ -12,9 +12,14 @@ class PermisoController extends Controller
      */
     public function index()
     {
-        $this->authorize("index_permiso");
+        // $this->authorize("index_permiso");
         $permisos = Permiso::get();
 
+        return response()->json($permisos);
+    }
+
+    public function indexPaginacion() {
+        $permisos = Permiso::paginate(10);
         return response()->json($permisos);
     }
 
