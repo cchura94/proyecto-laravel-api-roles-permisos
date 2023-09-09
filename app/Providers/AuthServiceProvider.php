@@ -28,6 +28,10 @@ class AuthServiceProvider extends ServiceProvider
         // permiso = index_user
         Gate::before(function($user, $permiso){
             // permiso: index_user, store_user, update_user, delete_user
+            // echo($user->permisos()->contains('manage_all'));
+            if($user->permisos()->contains('manage_all')){
+                return true;
+            }
             return $user->permisos()->contains($permiso);
         });
     }

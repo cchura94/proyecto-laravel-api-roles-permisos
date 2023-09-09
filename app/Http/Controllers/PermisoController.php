@@ -12,15 +12,28 @@ class PermisoController extends Controller
      */
     public function index()
     {
-        // $this->authorize("index_permiso");
+        $this->authorize("index_permiso");
         $permisos = Permiso::get();
 
         return response()->json($permisos);
     }
 
-    public function indexPaginacion() {
-        $permisos = Permiso::paginate(10);
-        return response()->json($permisos);
+    public function indexPaginacion(Request $request) {
+
+        $this->authorize("index_permiso");
+        // /api/permiso?page=2&limit=20&q=user
+        $limit = isset($request->limit)?$request->limit:10;
+        if(isset($request->q)){
+            // buscar
+            $permisos = Permiso::with('roles')->where('nombre', 'like', '%'.$request->q.'%')
+                                ->orWhere('subject', 'like', "%$request->q%")
+                                ->orWhere('detalle', 'like', "%$request->q%")
+                                ->paginate($limit);
+
+        }else{
+            $permisos = Permiso::with('roles')->paginate($limit);
+        }
+        return response()->json($permisos, 200);
     }
 
     /**
@@ -28,7 +41,7 @@ class PermisoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize("store_permiso");
+        // $this->authorize("store_permiso");
 
         $request->validate([
             "nombre" => "required|unique:permisos"
@@ -36,6 +49,8 @@ class PermisoController extends Controller
 
         $permiso = new Permiso();
         $permiso->nombre = $request->nombre;
+        $permiso->action = $request->action;
+        $permiso->subject = $request->subject;
         $permiso->detalle = $request->detalle;
         $permiso->save();
 

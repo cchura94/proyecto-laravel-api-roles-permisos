@@ -89,15 +89,16 @@ class UserController extends Controller
         
         $usuario->update();
 
-
         // $usuario->assignRole($rol);
-        $array_roles = [];
-        foreach ($request->roles as $rol) {
-            // return $rol["id"];
-            array_push($array_roles, $rol["id"]);
-
+        if(isset($request->roles)){
+            $array_roles = [];
+            foreach ($request->roles as $rol) {
+                // return $rol["id"];
+                array_push($array_roles, $rol["id"]);
+    
+            }
+            $usuario->roles()->sync($array_roles);
         }
-        $usuario->roles()->sync($array_roles);
         
         return response()->json(["message" => "Usuario Actualizado"], 200);
     }

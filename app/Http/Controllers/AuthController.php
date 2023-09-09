@@ -66,8 +66,8 @@ class AuthController extends Controller
     }
 
     public function funPerfil(){
-        $usuario = Auth::user();
-
+        $id_user = Auth::id();
+        $usuario = User::with('roles')->find($id_user);
         return response()->json($usuario);
     }
     
