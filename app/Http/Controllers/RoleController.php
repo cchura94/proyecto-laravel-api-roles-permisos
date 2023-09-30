@@ -43,7 +43,8 @@ class RoleController extends Controller
      */
     public function show(string $id)
     {
-        // $this->authorize("show_role");
+        $this->authorize("show_role");
+
         $rol = Role::with('permisos')->findOrFail($id);
 
         return response()->json($rol, 200);
@@ -54,7 +55,8 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $this->authorize("update_role");
+        $this->authorize("update_role");
+        
         $request->validate([
             "nombre" => "required|unique:roles,nombre,$id"
         ]);

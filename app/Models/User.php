@@ -70,4 +70,8 @@ class User extends Authenticatable
         $this->notify(new ResetPasswordNotification($url));
     }
 
+    public function sociales(){
+        return $this->hasMany(Social::class);
+    }
+
 }

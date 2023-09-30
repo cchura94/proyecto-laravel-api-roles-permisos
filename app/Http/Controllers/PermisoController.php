@@ -41,7 +41,7 @@ class PermisoController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->authorize("store_permiso");
+        $this->authorize("store_permiso");
 
         $request->validate([
             "nombre" => "required|unique:permisos"
